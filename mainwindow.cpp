@@ -54,10 +54,12 @@ void MainWindow::on_pushButtonStart_clicked()
 
     int steps = ui->lineEditSteps->text().toInt();
     int msec = ui->lineEditMs->text().toInt();
-    int uSec = msec * 1000;
+    int uSec = msec * 100;
 
     for (int i = 0; i < steps; ++i)
     {
+        usleep(uSec);
+
         digitalWrite(9, 0);
 
         usleep(uSec);
